@@ -1,0 +1,68 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+enum Role {
+    USER
+    ADMIN
+}
+
+enum Material {
+    gold
+    silver
+}
+
+enum JewelType {
+    aretes
+    anillos
+    collares
+    pulseras
+    broches
+    dijes
+    rosarios
+    relojes
+    piercings
+    esclavas
+}
+
+enum Gender {
+    men
+    women
+    kid
+    unisex
+}
+
+model User {
+    id        String   @id @default(uuid())
+    name      String
+    lastname  String?
+    email     String   @unique
+    role      Role     @default(USER)
+    password  String
+    createdAt DateTime @default(now())
+}
+
+model Jewel {
+    id          String       @id @default(uuid())
+    name        String
+    price       Float
+    type        JewelType
+    gender      Gender
+    material    Material
+    description String
+    slug        String       @unique
+    inStock     Int
+    JewelImage  JewelImage[]
+}
+
+model JewelImage {
+    id      Int    @id @default(autoincrement())
+    url     String
+    Jewel   Jewel  @relation(fields: [jewelId], references: [id])
+    jewelId String
+}

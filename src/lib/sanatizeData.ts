@@ -1,0 +1,1 @@
+export const sanitize = (input:string) => { return input.replace(/<[^>]*>?/gm, '').replace(/['";]/g, ''); };
