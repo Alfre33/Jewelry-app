@@ -1,4 +1,3 @@
-import { getAllJawels } from "@/actions/jawels/get-all-jawels";
 import { getJawelByMens } from "@/actions/jawels/get-jawel-by-men";
 import { Pagination } from "@/components";
 import { ProductCard } from "@/components/cards/ProductCard";

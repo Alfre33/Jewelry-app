@@ -1,7 +1,7 @@
 "use client";
 import { login } from "@/actions/auth/login-user";
 import { registerUser } from "@/actions/auth/register-user";
-import { Tittle,Alert } from "@/components";
+import { Tittle, Alert } from "@/components";
 import { sanitize } from "@/lib/sanatizeData";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -43,9 +43,9 @@ const registrationSchema = z.object({
 type RegistrationFormData = z.infer<typeof registrationSchema>;
 
 export default function RegisterPage() {
-   const [loginMessage, setLoginMessage] = useState<string>("");
-    const [status, setStatus] = useState<Boolean>();
-    const router=useRouter();
+  const [loginMessage, setLoginMessage] = useState<string>("");
+  const [status, setStatus] = useState<boolean>();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -62,21 +62,20 @@ export default function RegisterPage() {
   }: RegistrationFormData) => {
     const { message, ok } = await registerUser(name, lastName, email, password);
 
-      setLoginMessage(message);
-      setStatus(ok);
-     if(ok) {
-      const resp=await login(email,password) 
-      resp.ok ? router.replace('/') : "error al iniciar sesion"
+    setLoginMessage(message);
+    setStatus(ok);
+    if (ok) {
+      const resp = await login(email, password);
+      if (resp.ok) router.replace("/");
     }
-
   };
-  const colorMessage=status ? 'green': 'red';
+  const colorMessage = status ? "green" : "red";
   return (
     <form
       className="mx-auto max-w-xs flex flex-col"
       onSubmit={handleSubmit(onRegister)}
     >
-      <Tittle title="Register" size="3xl"/>
+      <Tittle title="Register" size="3xl" />
       <input
         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
         type="name"
@@ -116,8 +115,8 @@ export default function RegisterPage() {
         <span className="ml-">Sign In</span>
       </button>
       {loginMessage.length > 1 && (
-       <Alert message={loginMessage} status={status} color={colorMessage}/>
-        )}
+        <Alert message={loginMessage} status={status} color={colorMessage} />
+      )}
       <div className="flex justify-end text-sm mt-3 text-gray-600 opacity-80">
         <Link href="/auth/login">
           Ya tienes cuenta?

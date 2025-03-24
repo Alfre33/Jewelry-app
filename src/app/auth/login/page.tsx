@@ -28,7 +28,7 @@ type LoginFormData = z.infer<typeof LoginSchema>;
 
 export default function LoginPage() {
   const [loginMessage, setLoginMessage] = useState<string>("");
-  const [status, setStatus] = useState<Boolean>();
+  const [status, setStatus] = useState<boolean>();
   const router=useRouter();
   const {
     register,

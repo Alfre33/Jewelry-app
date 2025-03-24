@@ -1,5 +1,4 @@
 import { auth } from "@/auth.config";
-import { HeaderUser } from "@/components";
 import { Sidebar } from "@/components/ui/sidebar/Sidebar";
 import { TopMenu } from "@/components/ui/TopMenu";
 import { redirect } from "next/navigation";

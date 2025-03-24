@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
-  const { price, name, material, slug, type, JewelImage } = product;
+  const { price, name, material, slug, JewelImage } = product;
   const shortText = name.length > 18 ? name.substring(0, 20) + " ..." : name;
   const [displayImage, setdisplayImage] = useState(product.JewelImage![0].url);
   const image=JewelImage![1] ? JewelImage![1].url :'https://files.cults3d.com/uploaders/12987658/illustration-file/a4aba994-1e4b-403a-b7b1-a7dcfdb84cbc/Jawel.gif'

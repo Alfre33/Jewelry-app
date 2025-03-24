@@ -10,6 +10,7 @@ export default async function CatalogoLayout({
     if (session?.user.role!=='ADMIN') {
         redirect("/");
       }
+      console.log(session)
   return (
     <>
       {children}

@@ -11,6 +11,7 @@ export const getJawelBySlug = async (slug: string) => {
       jawel: jaweldb,
     };
   } catch (error) {
+    console.log(error)
     return {
       ok: false,
       message: `Ocurrio un error al obtener el producto con slug ${slug}`,

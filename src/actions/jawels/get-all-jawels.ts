@@ -27,6 +27,7 @@ export const getAllJawels = async ({
       totalPages:totalPages
     };
   } catch (error) {
+    console.log(error)
     return {
       ok: false,
       message: "Error al obtener los productos",

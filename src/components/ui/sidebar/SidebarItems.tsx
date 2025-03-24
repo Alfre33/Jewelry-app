@@ -57,7 +57,7 @@ export const SidebarItems = ({
     <div>
       {/* Background black */}
       {onMenuOpen && (
-        <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" />
+        <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30 " />
       )}
 
       {/* Blur */}
@@ -71,7 +71,7 @@ export const SidebarItems = ({
       {/* SideBar */}
       <nav
         className={clsx(
-          "fixed p-5 right-0 top-0 w-[400px] h-screen bg-bronce-400 text-bronce-50  z-20 shadow-2xl transform transition-all duration-300 overflow-y-auto md:hidden",
+          "fixed p-5 right-0 top-0 w-[400px] h-screen bg-bronce-400 text-bronce-50  z-20 shadow-2xl transform transition-all duration-300 overflow-y-auto ",
           {
             "translate-x-full": !onMenuOpen,
             // Clases condicionales con clsx
@@ -101,7 +101,7 @@ export const SidebarItems = ({
               key={item.title}
               href={item.href}
               onClick={onMenuClose}
-              className="flex items-center mt-10 p-2 hover:bg-bronce-100 rounded transition-all"
+              className="flex items-center mt-10 p-2 hover:bg-bronce-800 rounded transition-all"
             >
               {/* {item.icon} */}
               <span className="ml-3 text-xl ">{item.title}</span>
@@ -111,7 +111,7 @@ export const SidebarItems = ({
           <Link
             href="/auth/login"
             onClick={() => signOutButton()}
-            className="flex items-center mt-10 p-2 hover:bg-bronce-100 rounded transition-all"
+            className="flex items-center mt-10 p-2 hover:bg-bronce-800 rounded transition-all"
           >
             <IoLogOutOutline size={30} onClick={onMenuClose} />
             <span className="ml-3 text-xl ">Salir</span>
@@ -125,7 +125,7 @@ export const SidebarItems = ({
                 href={item.href}
                 key={`${item.title}-admin`}
                 onClick={onMenuClose}
-                className="flex items-center mt-10 p-2 hover:bg-bronce-100 rounded transition-all"
+                className="flex items-center mt-10 p-2 hover:bg-bronce-800 rounded transition-all"
               >
                 {/* {item.icon} */}
                 <span className="ml-3 text-xl ">{item.title}</span>

@@ -30,6 +30,8 @@ export const getJawelByWomans = async (
       totalPages
     };
   } catch (error) {
+    console.log(error)
+
     return {
       ok: false,
       message: `Ocurrio un error al obtener los productos de ${women}`,

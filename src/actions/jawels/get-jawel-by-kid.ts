@@ -23,15 +23,17 @@ export const getJawelByKids = async ({
       include: { JewelImage: true },
     });
 
-    const totalJawels = await prisma.jewel.count({where:{gender: kid}});
+    const totalJawels = await prisma.jewel.count({ where: { gender: kid } });
     const totalPages = Math.ceil(totalJawels / take);
     return {
       ok: true,
       message: "Producto obtenido correctamente",
       jawel: jaweldb,
-      totalPages
+      totalPages,
     };
   } catch (error) {
+    console.log(error);
+
     return {
       ok: false,
       message: `Ocurrio un error al obtener los productos de ${kid}`,

@@ -9,7 +9,7 @@ interface Props {
 export default async function JawelPage({ params }: Props) {
   const { slug } =await params;
   const {jawel}=await getJawelBySlug(slug)
-  console.log(jawel)
+  // console.log(jawel)
   return (
     <>
     {

@@ -3,11 +3,9 @@ import { createUpdateProduct } from "@/actions/jawels/create-update-jawel";
 import { deleteProductImage } from "@/actions/jawels/deleteProductImage";
 import { Product, ProductImage } from "@/interfaces/product.interface";
 import { genders, jawelTypes } from "@/seed/jawelType";
-import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 // const registrationJawelSchema = z.object({
 //   id: z.string().uuid().optional(),

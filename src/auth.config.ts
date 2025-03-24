@@ -34,6 +34,7 @@ export const authConfig: NextAuthConfig = {
           return (user = null);
         // return user object with their profile data
         const { password: passwordDB, ...resto } = user;
+        
         return resto;
       },
     }),

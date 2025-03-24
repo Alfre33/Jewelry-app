@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   message: string;
   color?: string;
-  status: Boolean | undefined;
+  status: boolean | undefined;
 }
 export const Alert = ({ status, message, color }: Props) => {
   return (
